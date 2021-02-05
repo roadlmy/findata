@@ -1,5 +1,6 @@
-import requests
+##############多线程速度反而没有加快########
 
+import requests
 import pandas as pd
 
 import urllib
