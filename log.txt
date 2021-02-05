@@ -1,0 +1,33 @@
+
+'''
+Author:李铭洋
+
+Date:2021年4月25日
+
+Item:金融数据爬虫
+
+Version:1.0.0
+
+'''
+
+一、金融数据爬虫 start:2021.2.4
+
+1.爬取东方财富股票代码：沪深A股
+2.爬取网易财经个股数据：沪深A股
+3.将个股数据存入mysql数据库
+
+注意：
+1.在使用同样代码的时候，保持文件夹的结构一致
+2.需要修改文件保存路径：
+      <get_data_sh.py> line 41, line 63 改到自己data_sh所在文件路径下
+      <get_data_sz.py> line 42, line 65 改到自己data_sz所在文件路径下
+3.<get_data_sh.py>与<get_data_sz.py>文件只需要执行一次，用于数据库初始化，之后不需要再执行。
+4.更新每日数据文件使用linux crontab设置 #TODO
+5.修改个股数据开始和结束日期，重新构建数据库 #TODO
+6.需要修改数据库root用户账号密码：
+<get_data_sh.py> line 54
+<get_data_sz.py> line 56
+
+二、Linux实时更新 start:2021.2.5
+1.git版本控制
+2.线程池爬虫#TODO
