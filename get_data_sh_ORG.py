@@ -1,7 +1,4 @@
 
-
-###step1:获取股票代码
-
 ##沪A股
 import requests
 import re
@@ -110,4 +107,4 @@ def save_db():
 if __name__ == '__main__':
     get_stocklist()
     get_indiv_stock()
-    # save_db()
+    save_db()

@@ -24,11 +24,11 @@ Version:1.1.0
 3.<get_data_sh.py>与<get_data_sz.py>文件只需要执行一次，用于数据库初始化，之后不需要再执行。
 4.更新每日数据文件使用linux crontab设置 #TODO
 5.修改个股数据开始和结束日期，重新构建数据库 #DONE
-<get_data_sh.py> line 47
-<get_data_sz.py> line 48
+      <get_data_sh.py> line 47
+      <get_data_sz.py> line 48
 6.需要修改数据库root用户账号密码：
-<get_data_sh.py> line 54
-<get_data_sz.py> line 56
+      <get_data_sh.py> line 54
+      <get_data_sz.py> line 56
 
 二、优化爬虫算法 start:2021.2.5 version 1.1.0
 
@@ -46,7 +46,11 @@ Version:1.1.0
 
 三、Linux crontab start:2021.2.6 version 1.2.0
 
-1.股票池更新
+1.股票池更新:
+   先更新已有的股票数据:
+   判断今日是否为交易日，否则无需更新
+   更新先获取每日最新数据，再存入数据库
+   从mysql stock_list 获取已有股票id，对比今日id，若有新增，则加入数据库，并下载相应数据
 2.每日数据更新
 3.数据库备份
 4.Linux crontab 自动执行文件
