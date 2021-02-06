@@ -21,6 +21,11 @@
 <br>
 这两个文件只需要在初始时候执行一次即可，之后无需再次执行，将个股数据存入mysql数据库<br>
 
+4.终端输入 crontab -e <br>
+将crontab文件的内容拷贝进去保存 <br>
+意思分别是每天21:30更新数据库信息，每天21:40更新股票池，每天22:30数据库备份 <br>
+可以使用 crontab -l 查看 <br>
+
 ### 项目文件介绍
 
 文件：<br>
@@ -29,11 +34,21 @@ get_data_sz_ORG.py:获取深A个股数据，并存入数据库（只需要执行
 log.txt:项目个人编写日志，记录及时想法 <br>
 sha_list.csv:爬取沪A的个股股票代码，便于直接查询使用，数据库也有 <br>
 sza_list.csv:爬取深A的个股股票代码，便于直接查询使用，数据库也有 <br>
+update.py:每日数据库数据更新 <br>
+update_new_stock_sh.py:每日沪A股票池更新 <br>
+update_new_stock_sz.py:每日深A股票池更新 <br>
+crontab:linux crontab命令 <br>
+
 <br>
 
 文件夹：<br>
 data_sh:网易财经下载的沪A个股数据，存入数据库后可删除，初始为空 <br>
 data_sz:网易财经下载的深A个股数据，存入数据库后可删除，初始为空 <br>
 save:存放一些测试代码 <br>
+backup:数据库备份文件存放位置 <br>
 
 ### 项目更新以及想法
+
+1.爬虫多线程
+
+2.数据库存储缓存参数设置my.cnf
