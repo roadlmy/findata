@@ -1,7 +1,0 @@
-
-
-30 21 * * * python3 /Users/lmy/Desktop/findata/update.py
-40 21 * * * python3 /Users/lmy/Desktop/findata/update_new_stock_sh.py
-40 21 * * * python3 /Users/lmy/Desktop/findata/update_new_stock_sz.py
-
-30 22 * * * mysqldump -uroot -p schooll > /Users/lmy/Desktop/findata/backup/$(date +%Y%m%d).sql.bak
